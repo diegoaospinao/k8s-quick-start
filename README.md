@@ -9,7 +9,7 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-### deploy cluster to aks
+### deploy service to aks
 
 ```sh
 kubectl get nodes
@@ -46,7 +46,7 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-### deploy cluster to aks (using helm from local)
+### deploy service to aks (using helm from local)
 
 ```sh
 kubectl get nodes
@@ -54,7 +54,7 @@ helm install weatherforecast-api weatherforecast-api/
 kubectl get services
 ```
 
-### deploy cluster to aks (using helm from registry)
+### deploy service to aks (using helm from registry)
 
 ```sh
 kubectl get nodes
