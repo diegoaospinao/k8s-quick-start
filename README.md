@@ -9,6 +9,12 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
+### install an ingress controller
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+```
+
 ### deploy service to aks
 
 ```sh
