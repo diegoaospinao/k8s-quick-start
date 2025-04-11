@@ -34,14 +34,14 @@ helm create weatherforecast-api
 ### package chart
 
 ```sh
-helm package .
+helm package weatherforecast-api
 ```
 
 ### push chart to registry
 
 ```sh
 helm registry login [container-registry] --username [user-name] --password [password]
-helm push weatherforecast-api-0.1.0.tgz oci://[container-registry]/helm
+helm push weatherforecast-api-<version>.tgz oci://[container-registry]/helm
 az acr repository list --name [container-registry]
 ```
 
@@ -50,6 +50,12 @@ az acr repository list --name [container-registry]
 ```sh
 az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1  --generate-ssh-keys
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
+```
+
+### install an ingress controller
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
 ```
 
 ### deploy service to aks (using helm from local)
