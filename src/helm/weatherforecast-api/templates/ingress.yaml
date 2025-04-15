@@ -3,6 +3,7 @@
 {{- $servicePort := .Values.service.port -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
+enabled: {{ .Values.ingress.enabled }}
 metadata:
   name: {{ .Values.ingress.name }}
   annotations:

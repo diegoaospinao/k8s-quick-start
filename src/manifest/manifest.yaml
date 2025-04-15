@@ -45,12 +45,13 @@ spec:
     name: http
     port: 80
     targetPort: 8080
-  type: ClusterIP
+  type: LoadBalancer
 
 ---
 # ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
+enabled: false
 metadata:
   name: weatherforecast-api-ingress
   annotations:

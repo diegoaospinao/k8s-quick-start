@@ -47,11 +47,11 @@ deployment:
 
 service:
   name: weatherforecast-api-service
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   name: weatherforecast-api-ingress
   className: ""
   annotations: {}
