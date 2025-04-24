@@ -19,8 +19,8 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main
 
 ```sh
 kubectl get nodes
-kubectl apply -f manifest.yaml
 kubectl get services
+kubectl apply -f weatherforecast-api.yaml
 ```
 
 ## deploy cluster using helm
@@ -62,14 +62,14 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main
 
 ```sh
 kubectl get nodes
-helm install weatherforecast-api weatherforecast-api/
 kubectl get services
+helm install weatherforecast-api weatherforecast-api/
 ```
 
 ### deploy service to aks (using helm from registry)
 
 ```sh
 kubectl get nodes
-helm install weatherforecast-api oci://[container-registry]/helm/weatherforecast-api --version 0.1.0
 kubectl get services
+helm install weatherforecast-api oci://[container-registry]/helm/weatherforecast-api --version 0.1.0
 ```
